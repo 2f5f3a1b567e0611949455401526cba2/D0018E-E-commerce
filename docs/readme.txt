@@ -14,6 +14,9 @@
 	- Purchase History
 	- Admin Power (Add product, Add stock, Remove Stock, Stock Status, Remove Comments)
 
+@ Stack:
+	- XAMPP to install LAMP:Linux,Apache,MarinaDB,PHP
+
 @ Cookies:
  To avoid needing customers to login we keep client state in cookies
  The following Cookies are used:
