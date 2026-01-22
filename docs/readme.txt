@@ -21,7 +21,7 @@
  To avoid needing customers to login we keep client state in cookies
  The following Cookies are used:
 	
-	$Shopping_History = [Array(ProductID)]
+	$Shopping_History = [Array(OrderID)]
 	Lifetime = 3 months (since last visit)
  To Keep track of the purchase history 
  
