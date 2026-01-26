@@ -1,0 +1,39 @@
+[ROUGH DRAFT]
+
+//A schema which can be copy-pasted into sql to create the schema. 
+
+@ Schema
+
+CREATE SCHEMA db AUTHORIZATION Simon;
+CREATE TABLE db.Products(
+	pID   INT PRIMARY KEY AUTO_INCREMENT,   
+	price INT,                    
+	description  VARCHAR(100) NOT NULL, 
+	imgs  VARCHAR(100) NOT NULL,
+	stock INT,                  
+	stock_Status ENUM('InStock','OutofStock')
+);
+CREATE TABLE db.Transactions(
+	oID   INT PRIMARY KEY AUTO_INCREMENT,   
+	pID   INT,                     
+	tID   INT,                    
+	trans_Status ENUM('Unpaid', 'InProgress', 'Paid'),
+	utime BIGINT,					
+	price BIGINT,                
+	count INT,                    
+	name  VARCHAR(100) NOT NULL,  
+	addr  VARCHAR(100) NOT NULL 
+);
+CREATE TABLE db.Admins (
+	uID   INT     PRIMARY KEY,   
+	name  VARCHAR(100) NOT NULL, 
+	pass  VARCHAR(256) NOT NULL
+);
+CREATE TABLE db.Reviews (
+	cID   INT     PRIMARY KEY,   
+	pID   INT,                   
+	score INT,                   
+	msg   VARCHAR(100)          
+);
+
+
