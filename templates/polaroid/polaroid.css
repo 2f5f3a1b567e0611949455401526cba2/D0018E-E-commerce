@@ -18,10 +18,13 @@ body {
 
 
 .galery {
-	column-width: calc(var(--polaroid-size) * 0.823057 );
-	column-fill: balance;
-  column-gap: 1em;
-	overflow-x: hidden;
+	display: flex;
+	flex-wrap: wrap;
+
+	/* column-width: calc(var(--polaroid-size) * 0.823057 ); */
+	/* column-fill: balance; */
+  /* column-gap: 1em; */
+	/* overflow-x: hidden; */
 }
 
 .photo-area {
@@ -30,7 +33,8 @@ body {
 	width:    calc(var(--polaroid-size) * 0.714387);
 	transform:  rotate(calc(var(--rotation-image, 0deg)));
 
-	margin: 0 0 0.5em 0;
+	margin: 0;
+	flex-shrink: 0;
 
 	align-content: center;
 	background: var(--polaroid-background);
@@ -39,7 +43,9 @@ body {
 /* https://support.polaroid.com/hc/en-us/articles/115012363647-What-are-Polaroid-photo-dimensions */
 
 .polaroid {
-	display: flow-root;
+	display: flex;
+	flex-direction: column;
+
 	box-sizing: border-box;
 	height: var(--polaroid-size);
 	width: calc(var(--polaroid-size) * 0.823057);
@@ -53,7 +59,9 @@ body {
 	filter: sepia(var(--polaroid-sepia));
 }
 .polaroid > figcaption {
-	max-height: calc(var(--polaroid-size) * 0.2657690);
+	flex-grow: 1;
+	overflow: hidden;
+	text-align-last: center;
 }
 
 .polaroid > .photo-area > img {
