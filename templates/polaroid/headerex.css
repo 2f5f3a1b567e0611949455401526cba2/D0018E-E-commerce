@@ -1,0 +1,101 @@
+.headermain {
+  transform: rotate(7deg);
+  transform-origin: 0dvb;
+  text-shadow: 1px -1px 0 black; 
+  color:rgb(161, 108, 211);
+  font-family: fantasy;
+  font-weight:900;
+      padding-left: -10px ;
+
+}
+
+header {
+  display: flex;
+  a:hover {
+    color: aqua;
+  }
+}
+
+.websitetitle {
+    border-color: bisque;
+    text-indent: 1px;
+    text-shadow: -2px -1px 0 rgb(152, 203, 247);
+    color:rgb(79, 172, 172);
+    font-family: fantasy;
+    font-size: 17px;
+  font-weight:900;
+  transform: rotate(3deg);
+    margin-trim: all;
+    text-rendering:geometricPrecision;
+    padding-left: 10px;
+
+}
+
+
+.boldstyle {
+  box-shadow: 5cm;
+  text-align: left;
+  background-color:rgb(247, 240, 111);
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+}
+
+a {
+    color: rgb(161, 108, 211);
+    text-decoration: none;
+
+}
+.boldstyle > h1 {
+  color:deeppink;
+}
+
+.h1test {
+  color:deeppink;
+}
+
+body {
+  border:10px solid palevioletred;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #dc9dd2c4;
+}
+@media screen and (max-width: 600px) {
+  .shopgtid {
+    width: 100%;
+  }
+}
+.shopgrid {
+display: grid;
+  /* Enables grid layout */
+  grid-template-columns: repeat(2, 200px);
+  /* Creates two equal-width columns */
+  gap: 5px;
+   object-fit: fill;
+
+          }
+
+.shopgriditem {
+  display: block;
+  height: 200px;
+  border: 5px solid white;
+  background-color: white;
+  padding-bottom: 20px;
+  
+
+}
+
+
+img {
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+figure {
+  width: 100%;
+  height:100%;
+  object-fit: cover; 
+}
