@@ -1,0 +1,97 @@
+html {
+    font-family: sans-serif;
+}
+
+.stock {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 4px;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.images > div {
+    position: relative;
+}
+
+
+.deletebutton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: unset;
+    border: none;
+    color: red;
+    &:hover {
+        background-color: red;
+        color: white;
+    }
+}
+
+.images img {
+    width: 80px;
+    padding: 5px;
+    background-color: #eee;
+    border: 2px solid white;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.205);
+}
+
+.stock > input {
+    text-align: right;
+    width: 3em;
+}
+
+main {
+    max-width: 1000px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.205);
+    border: 1px solid lightgray;
+    margin-inline: auto;
+    padding: 1em;
+}
+
+table, tr, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+td {
+    padding: 5px;
+}
+
+tr:nth-child(2n) {
+    background-color: #eee;
+}
+
+form {
+    margin-inline: auto;
+    padding: 1em;
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 400px;
+    margin-top: 1em;
+}
+
+.editform {
+    margin-inline: unset;
+    border: none;
+    padding: unset;
+}
+
+textarea {
+    resize: none;
+}
+
+.login > h1 {
+    margin: 0;
+    font-weight: normal;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
