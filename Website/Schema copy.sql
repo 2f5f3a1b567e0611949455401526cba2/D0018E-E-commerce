@@ -21,7 +21,6 @@ CREATE TABLE Foxdb.Orders(
 CREATE TABLE Foxdb.OrderItems(
 	OrderItemID INT PRIMARY KEY,
 	ORDERID INT,
-	Idx int,
     ProductID Int,
 	FOREIGN KEY (OrderID) REFERENCES Orders(OrderId) ON DELETE CASCADE, 
 	FOREIGN KEY (ProductID) REFERENCES Products(ProductID) ON DELETE CASCADE
@@ -29,8 +28,7 @@ CREATE TABLE Foxdb.OrderItems(
 CREATE TABLE Foxdb.Images(
 	--Indexing should be worked on
 	ImageID INT PRIMARY KEY,
-	Productid Index, 
-	Idx int UNSIGNED REFERENCES OrderItems(Idx),
+	Productid int REFERENCES Products(Productid), 
 	ImagePath TINYTEXT
 );
 CREATE TABLE Foxdb.Admins(
