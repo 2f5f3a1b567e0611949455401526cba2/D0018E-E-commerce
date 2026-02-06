@@ -1,4 +1,6 @@
 <?php
+    require 'db.php';
+    
     if (isset($_POST["username"]) && $_POST["password"]) {
         $username = htmlspecialchars($_POST["username"]);
         $password = htmlspecialchars($_POST["password"]);
@@ -33,16 +35,20 @@
                 <td>Stock</td>
                 <td></td>
             </tr>
-            <?php
-                $names = ["Paint", "Trampoline", "Paper", "Printer", "Ink", "Laser pointer"]; 
-                for($i = 0; $i < 6; $i++) {
+            <?php 
+                $query = $db->query('SELECT product_id, name, stock FROM products');
+                while(($row = $query->fetch())) {
+                    $pname = $row["name"];
+                    $id = $row["product_id"];
+                    $stock = $row["stock"];
                     echo "<tr>";
-                    echo "<td>$i</td>";
-                    $pname = $names[$i];
+                    echo "<td>$id</td>";
                     echo "<td>$pname</td>";
-                    $stock = (133*$i+2) % 31;
-                    echo "<td><div class='stock'><button>-</button><input type='text' value='$stock'><button>+</button></div></td>";
-                    echo "<td><a href='edit.php?edit_id=$i'>Edit</a></td>";
+                    echo "<td>";
+                    echo "<form class='stock' action='updatestock.php' method='post'>";
+                    echo "<input type='submit' style='display:none;'><button name='change' value='-1'>-</button><input type='text' name='stock' value='$stock'><button name='change' value='1'>+</button><input type='hidden' name='pid' value='$id'></form>";
+                    echo "</td>";
+                    echo "<td><a href='edit.php?edit_id=$id'>Edit</a></td>";
                     echo "</tr>";
                 }
             ?>
@@ -53,6 +59,7 @@
                 <td><a href='new.php'>Add new</a></td>
             </tr>
         </table>
+        
     </main>
 </body>
 </html>
